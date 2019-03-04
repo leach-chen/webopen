@@ -26,6 +26,34 @@
 			document.getElementById("imgshow").style.display="none";//隐藏
 			document.getElementById("pagecontent").style.display="";//显示	
 		  }
+		  
+		  
+		    var ua = navigator.userAgent;
+
+			var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+
+			isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+
+			isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+
+			isMobile = isIphone || isAndroid;
+
+			//判断
+
+			if(isMobile){
+				var pc = document.getElementById("pcuse")
+				if (pc != null)
+				{
+					pc.parentNode.removeChild(pc);
+				}
+			}else{
+				var phone = document.getElementById("phoneuse")
+				if (phone != null)
+				{
+					phone.parentNode.removeChild(phone);
+				}
+			}
+		  
 		});
 
 		function getUrl() { 
@@ -46,17 +74,33 @@
 </head>
 <body style="margin:0px;padding:0px;width100%;height:100%;">
 
-<div align="center">
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4924092018203651"
-     data-ad-slot="8000704711"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<div class="pcuse" align="center">
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-4924092018203651"
+		 data-ad-slot="8000704711"
+		 data-ad-format="auto"
+		 data-full-width-responsive="true"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
 </div>
+
+
+<div class="phoneuse" align="center">
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-format="fluid"
+		 data-ad-layout-key="-fb+5w+4e-db+86"
+		 data-ad-client="ca-pub-4924092018203651"
+		 data-ad-slot="6057013753"></ins>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+</div>
+
+
 
 <div align="center" style="background:#000;width:100%;height:100%;display:flex; flex-direction: column;align-items: center;justify-content: center;">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
