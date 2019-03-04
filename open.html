@@ -12,7 +12,19 @@
 	<script>
 
 		$(document).ready(function(){
-		  document.getElementById("pagecontent").src=getUrl();
+		
+		  var url = getUrl()
+		  if(url.match(RegExp(".PNG")) || url.match(RegExp(".png")) || url.match(RegExp(".JPG")) || url.match(RegExp(".jpg"))){
+			url = url.substr(0,url.length - 1)
+			document.getElementById("imgshow").src=url;  
+			document.getElementById("imgshow").style.display="";//显示
+			document.getElementById("pagecontent").style.display="none";//隐藏			
+		  }else
+		  {
+			document.getElementById("pagecontent").src=url;
+			document.getElementById("imgshow").style.display="none";//隐藏
+			document.getElementById("pagecontent").style.display="";//显示	
+		  }
 		});
 
 		function getUrl() { 
@@ -32,9 +44,10 @@
 	
 </head>
 <body style="margin:0px;padding:0px;width100%;height:100%;">
-<div align="center">
+<div align="center" style="background:#000;width:100%;height:100%;display:flex; flex-direction: column;align-items: center;justify-content: center;">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- open -->
+<div>
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4924092018203651"
@@ -46,6 +59,8 @@
 </script>
 </div>
 <iframe id="pagecontent"  style="width:100%;height:100%;overflow: hidden; border:none;scrolling:auto;margin:0px;padding:0px;vertical-align:bottom;"></iframe>
+<img id="imgshow" ></img>
+</div>
 
 </div>
 </body>
