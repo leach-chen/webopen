@@ -15,7 +15,9 @@
 		$(document).ready(function(){
 		
 		  var url = getUrl()
-		  if(url.match(RegExp(".PNG")) || url.match(RegExp(".png")) || url.match(RegExp(".JPG")) || url.match(RegExp(".jpg"))){
+		  var judgeurl = url;
+		  judgeurl = judgeurl.toLowerCase()
+		  if(judgeurl.match(RegExp(".png")) || judgeurl.match(RegExp(".jpg")) || judgeurl.match(RegExp(".gif"))){
 			url = url.substr(0,url.length - 1)
 			document.getElementById("imgshow").src=url;  
 			document.getElementById("imgshow").style.display="";//显示
