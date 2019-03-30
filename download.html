@@ -15,9 +15,9 @@
 		$(document).ready(function(){
 		  var url = getUrl()
 		  var judgeurl = url;
-		  document.getElementById("clickdownload").href=url;
       if(url.length>0)
       {
+        document.getElementById("clickdownload").href=url;
         window.location.href=url;
       }
 		   var ua = navigator.userAgent;
